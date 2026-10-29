@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Score | Sarah Dagohoy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,800;1,9..144,900&family=Montserrat:wght@500;600;700;800&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header-inner">
+            <a href="../index.html" class="site-brand">Sarah Dagohoy</a>
+            <nav class="site-nav editorial-border-y">
+                <a href="../index.html" class="nav-link">Home (6 PPTs)</a>
+                <a href="about.html" class="nav-link">About Me</a>
+                <a href="score.html" class="nav-link active">Score (1-100)</a>
+                <a href="feedback.html" class="nav-link">Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= SCORE SECTION ================= -->
+    <section class="score-section">
+        <div class="score-card">
+
+            <div class="score-top">
+                <div>
+                    <span class="section-badge">3 - Project Evaluation</span>
+                    <h2 class="section-h2">Programming Score</h2>
+                </div>
+                <div class="score-range-pill">
+                    <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;display:block;">Score Range</span>
+                    <span style="font-size:1.1rem;font-weight:800;">1 - 100</span>
+                </div>
+            </div>
+
+            <div class="score-body">
+
+                <!-- Controls -->
+                <div class="score-controls">
+                    <div>
+                        <label class="score-label" for="score-input">Enter Your Score (1 to 100):</label>
+                        <div class="score-input-row">
+                            <input
+                                type="number"
+                                id="score-input"
+                                class="score-number-input"
+                                min="1"
+                                max="100"
+                                value="98"
+                                oninput="syncScore(this.value)"
+                                placeholder="Enter score (1-100)"
+                            >
+                            <button onclick="submitScoreRating()" class="retro-btn" style="padding:12px 24px;border-radius:12px;font-size:0.8rem;white-space:nowrap;">
+                                Save Score
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Range Slider -->
+                    <div>
+                        <div class="slider-labels">
+                            <span>Minimum: 1</span>
+                            <span>Drag to Adjust</span>
+                            <span>Maximum: 100</span>
+                        </div>
+                        <input
+                            type="range"
+                            id="score-slider"
+                            min="1"
+                            max="100"
+                            value="98"
+                            oninput="syncScore(this.value)"
+                        >
+                    </div>
+
+                    <!-- Quick Picks -->
+                    <div class="quick-picks">
+                        <span class="quick-pick-label">Quick Pick:</span>
+                        <button onclick="syncScore(100)" class="quick-pick-btn">100 Perfect</button>
+                        <button onclick="syncScore(95)" class="quick-pick-btn">95 Excellent</button>
+                        <button onclick="syncScore(90)" class="quick-pick-btn">90 Great</button>
+                        <button onclick="syncScore(85)" class="quick-pick-btn">85 Good</button>
+                    </div>
+                </div>
+
+                <!-- Live Score Display -->
+                <div class="score-display">
+                    <span class="score-current-label">Current Score</span>
+                    <div style="display:flex;align-items:baseline;justify-content:center;margin:8px 0 4px;">
+                        <span id="score-display-big" class="score-big-num">98</span>
+                        <span class="score-denom">/100</span>
+                    </div>
+                    <span id="score-badge-label" class="score-remark-badge">Outstanding Programmer! (95-100)</span>
+                    <p id="score-saved-msg" class="score-saved-toast"></p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <p class="footer-title">2026 Programming | For Future Programmer</p>
+                <p class="footer-sub">Created by <strong>Sarah Dagohoy</strong> - Grade 10</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function syncScore(val) {
+            var num = parseInt(val, 10);
+            if (isNaN(num)) num = 1;
+            if (num < 1) num = 1;
+            if (num > 100) num = 100;
+
+            document.getElementById('score-input').value = num;
+            document.getElementById('score-slider').value = num;
+            document.getElementById('score-display-big').textContent = num;
+
+            var badge = document.getElementById('score-badge-label');
+            if (num >= 95) {
+                badge.textContent = 'Outstanding Programmer! (95-100)';
+            } else if (num >= 85) {
+                badge.textContent = 'Very Satisfactory! (85-94)';
+            } else if (num >= 75) {
+                badge.textContent = 'Good Job! (75-84)';
+            } else {
+                badge.textContent = 'Keep Practicing! (1-74)';
+            }
+        }
+
+        function submitScoreRating() {
+            var val = document.getElementById('score-input').value;
+            syncScore(val);
+            var msg = document.getElementById('score-saved-msg');
+            msg.textContent = 'Score of ' + val + '/100 recorded!';
+            msg.style.display = 'block';
+            setTimeout(function() { msg.style.display = 'none'; }, 4000);
+        }
+    </script>
+
+</body>
+</html>
+

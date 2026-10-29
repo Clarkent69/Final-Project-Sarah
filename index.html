@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TLE Computer Programming | Sarah Dagohoy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@1,9..144,800;1,9..144,900&family=Montserrat:wght@500;600;700;800&family=Shrikhand&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="site-brand">Sarah Dagohoy</a>
+            <nav class="site-nav editorial-border-y">
+                <a href="index.html" class="nav-link active">Home (6 PPTs)</a>
+                <a href="pages/about.html" class="nav-link">About Me</a>
+                <a href="pages/score.html" class="nav-link">Score (1-100)</a>
+                <a href="pages/feedback.html" class="nav-link">Feedback</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ================= HERO BANNER ================= -->
+    <section class="hero-banner">
+        <div class="hero-inner">
+
+            <!-- Geometric Split Cutout Illustration -->
+            <div class="cutout-stage">
+                <!-- Upper Half-Circle -->
+                <div class="upper-semicircle" style="display:flex;flex-direction:column;align-items:center;justify-content:center;padding:16px;">
+                    <div style="position:absolute;inset:0;opacity:0.25;background:repeating-linear-gradient(90deg,transparent,transparent 35px,rgba(0,0,0,0.35) 35px,rgba(0,0,0,0.35) 70px);"></div>
+                    <div style="position:relative;z-index:10;display:flex;flex-direction:column;align-items:center;text-align:center;">
+                        <div style="width:80px;height:80px;border-radius:16px;background-color:#f3ebd8;border:2px solid #9e241f;box-shadow:0 4px 16px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;margin-bottom:8px;transform:rotate(-3deg);">
+                            <span style="font-family:'Shrikhand',cursive;font-size:2rem;color:#9e241f;line-height:1;">CP</span>
+                        </div>
+                        <span style="padding:2px 12px;border-radius:999px;background-color:#ff9eaa;color:#9e241f;border:1px solid #9e241f;font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;">
+                            TLE 10 - Grade 10
+                        </span>
+                    </div>
+                </div>
+                <!-- Lower Rectangular Cutout -->
+                <div class="lower-rect-cutout" style="display:flex;align-items:center;justify-content:center;padding:0 24px;">
+                    <div style="display:flex;align-items:center;gap:16px;color:rgba(243,235,216,0.9);font-family:'Courier New',monospace;font-size:0.8rem;background-color:rgba(0,0,0,0.25);padding:8px 16px;border-radius:12px;border:1px solid rgba(243,235,216,0.3);margin-top:-32px;">
+                        <span style="color:#ff9eaa;font-weight:700;">&lt;html&gt;</span>
+                        <span>Hello World! Ready to Code</span>
+                        <span style="color:#ff9eaa;font-weight:700;">&lt;/html&gt;</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Callout Bubble -->
+            <div class="callout-block">
+                <div class="callout-line"><div class="callout-dot"></div></div>
+                <div class="megaphone-wrap">
+                    <svg style="width:40px;height:40px;color:#9e241f;" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 3a1 1 0 0 0-1 1v.58L8.6 8H5a3 3 0 0 0-3 3v2a3 3 0 0 0 3 3h.4l1.45 4.32A1 1 0 0 0 7.8 21h2.2a1 1 0 0 0 .95-1.31L9.72 16H11l6 3.42V20a1 1 0 0 0 2 0V4a1 1 0 0 0-1-1zm-1 13.52L11.52 14H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h6.52L17 7.48v9.04zM20.5 12a2.5 2.5 0 0 0-1.5-2.3v4.6a2.5 2.5 0 0 0 1.5-2.3z"/>
+                    </svg>
+                </div>
+                <div class="callout-bubble">
+                    <p class="callout-text serif-quote">"For Future<br>Programmers!"</p>
+                </div>
+            </div>
+
+            <!-- Oversized Script Wordmark -->
+            <div class="wordmark-wrap">
+                <span class="lunilae-script wordmark">programming</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ================= HOME: 6 PPT CARDS ================= -->
+    <section class="home-section">
+        <div class="section-header-row">
+            <div>
+                <span class="section-badge">1 - Home Section</span>
+                <h2 class="section-h2">6 PowerPoint Presentations</h2>
+                <p class="section-sub">Click any presentation deck below to open the interactive slide viewer.</p>
+            </div>
+            <div>
+                <button onclick="openSlideDeck(0)" class="retro-btn" style="padding:10px 20px;border-radius:12px;font-size:0.8rem;">
+                    Launch Slide Viewer
+                </button>
+            </div>
+        </div>
+
+        <!-- PPT Cards dynamically rendered -->
+        <div id="ppt-cards-grid" class="ppt-grid"></div>
+
+        <!-- Study Guide -->
+        <div class="study-guide-card">
+            <div class="study-guide-header">
+                <div>
+                    <h3 class="study-guide-h3">Complete TLE Computer Programming Study Guide</h3>
+                    <p class="study-guide-sub">All 11 core topics covered in the 6 PowerPoint Presentations above</p>
+                </div>
+                <span class="topics-badge">11 Topics Total</span>
+            </div>
+
+            <ul class="topics-grid" style="list-style:none;">
+                <li class="topic-item">
+                    <strong class="topic-name">1. Introduction to Computer Programming</strong>
+                    Computer programming is the process of creating instructions that tell a computer what to do. It helps people develop applications, websites, and software to solve problems.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">2. HTML</strong>
+                    HTML stands for HyperText Markup Language. It is the standard language used to create the structure and content of a web page.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">3. CSS</strong>
+                    CSS stands for Cascading Style Sheets. It is used to design and improve the appearance of a website by adding colors, fonts, spacing, and layouts.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">4. Website Structure</strong>
+                    A website is organized into different sections such as the header, main content, and footer. A good structure makes a website easier to read and navigate.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">5. Headings and Paragraphs</strong>
+                    Headings are used to organize the content of a webpage, while paragraphs contain detailed information. They help make the page neat and easy to understand.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">6. HTML Formatting</strong>
+                    HTML formatting is used to change the appearance of text. It includes making text bold, italic, underlined, or highlighted for emphasis.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">7. Images</strong>
+                    Images make a website more attractive and informative. In HTML, images are added using the <code style="background:#f3ebd8;padding:1px 6px;border-radius:4px;border:1px solid #9e241f;font-family:monospace;">&lt;img&gt;</code> tag.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">8. Hyperlinks</strong>
+                    Hyperlinks connect one webpage to another or open websites on the internet. They are created using the <code style="background:#f3ebd8;padding:1px 6px;border-radius:4px;border:1px solid #9e241f;font-family:monospace;">&lt;a&gt;</code> tag in HTML.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">9. Tables</strong>
+                    Tables are used to organize information into rows and columns. They are useful for displaying data clearly and neatly.
+                </li>
+                <li class="topic-item">
+                    <strong class="topic-name">10. Properties &amp; Attributes</strong>
+                    HTML attributes provide additional information about an element, while CSS properties control the design and appearance of elements. Both are important in building a webpage.
+                </li>
+                <li class="topic-item span-2">
+                    <strong class="topic-name">11. Elements</strong>
+                    HTML elements are the building blocks of a webpage. They define the different parts of the page, such as headings, paragraphs, images, and links.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <div class="footer-inner">
+            <div>
+                <p class="footer-title">2026 Programming | For Future Programmer</p>
+                <p class="footer-sub">Created by <strong>Sarah Dagohoy</strong> - Grade 10</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ================= SLIDE MODAL ================= -->
+    <div id="ppt-modal" class="modal-overlay">
+        <div class="modal-box">
+            <div class="modal-topbar">
+                <span id="ppt-modal-deck-title" class="modal-title">PPT 1: Introduction to Computer Programming</span>
+                <button onclick="closeSlideDeck()" class="modal-close-btn">Close</button>
+            </div>
+            <div class="modal-stage">
+                <div class="slide-ribbon">
+                    <span id="ppt-slide-badge" class="slide-badge">Slide 1 of 3</span>
+                    <span class="slide-author">TLE 10 - Sarah Dagohoy</span>
+                </div>
+                <div class="slide-main">
+                    <h3 id="ppt-slide-heading" class="slide-heading">Slide Heading</h3>
+                    <div id="ppt-slide-bullets" class="slide-bullets"></div>
+                    <pre id="ppt-slide-code-box" class="slide-code-box"></pre>
+                </div>
+                <div class="slide-footer">
+                    <div class="slide-nav-btns">
+                        <button onclick="prevSlide()" class="slide-prev-btn">Prev Slide</button>
+                        <button onclick="nextSlide()" class="slide-next-btn">Next Slide</button>
+                    </div>
+                    <div class="deck-switcher">
+                        <span class="deck-label">Deck:</span>
+                        <button onclick="openSlideDeck(0)" class="deck-dot" id="deck-dot-0">1</button>
+                        <button onclick="openSlideDeck(1)" class="deck-dot" id="deck-dot-1">2</button>
+                        <button onclick="openSlideDeck(2)" class="deck-dot" id="deck-dot-2">3</button>
+                        <button onclick="openSlideDeck(3)" class="deck-dot" id="deck-dot-3">4</button>
+                        <button onclick="openSlideDeck(4)" class="deck-dot" id="deck-dot-4">5</button>
+                        <button onclick="openSlideDeck(5)" class="deck-dot" id="deck-dot-5">6</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ================= SCRIPTS ================= -->
+    <script src="js/slides.js"></script>
+    <script>renderPptCards(); initSlideModal();</script>
+
+</body>
+</html>
